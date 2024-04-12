@@ -58,13 +58,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'left',
     flex: 1,
-    writingDirection: 'rtl', // Texto de derecha a izquierda
+    writingDirection: 'rtl', 
   },
   inputValue: {
     fontSize: 16,
     textAlign: 'right',
     flex: 1,
-    writingDirection: 'ltr', // Texto de izquierda a derecha
+    writingDirection: 'ltr', 
   },
   separator: {
     borderBottomWidth: 1,

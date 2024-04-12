@@ -7,21 +7,20 @@ const InputBoxes = () => {
   const [inputs, setInputs] = useState(Array(7).fill(''));
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-  // Función para manejar el cambio en los TextInput
+
   const handleInputChange = (index, value) => {
     const newInputs = [...inputs];
     newInputs[index] = value;
     setInputs(newInputs);
   };
 
-  // Función para manejar el evento de crear el reporte
+
   const handleCreateReport = () => {
     if (!inputs.some(input => input.trim() === '')) {
       navigation.navigate('ShowReport', { inputs });
     }
   };
 
-  // Efecto para habilitar o deshabilitar el botón según el estado de los inputs
   useEffect(() => {
     setIsButtonDisabled(inputs.some(input => input.trim() === ''));
   }, [inputs]);
@@ -29,15 +28,13 @@ const InputBoxes = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
       <View style={styles.container}>
-        {/* Encabezado */}
         <View style={styles.header}>
           <TouchableOpacity style={styles.backButton}>
             <Text style={styles.backButtonText}>Atras</Text>
           </TouchableOpacity>
           <Text style={styles.headerText}>Llenar reporte</Text>
-          <View style={{ width: 60 }}></View> {/* Espacio en blanco para centrar el texto */}
+          <View style={{ width: 60 }}></View> 
         </View>
-        {/* Inputs */}
         <TextInput
           style={styles.input}
           placeholder="VIN"
@@ -80,7 +77,6 @@ const InputBoxes = () => {
           value={inputs[6]}
           onChangeText={(text) => handleInputChange(6, text)}
         />
-        {/* Botón "Crear Reporte" */}
         <TouchableOpacity
           style={[styles.createReportButton, isButtonDisabled && styles.disabledButton]}
           onPress={handleCreateReport}
@@ -88,7 +84,6 @@ const InputBoxes = () => {
         >
           <Text style={styles.createReportButtonText}>Crear Reporte</Text>
         </TouchableOpacity>
-        {/* Footer */}
         <View style={styles.footer}>
           <View style={styles.circleButtonContainer}>
             <TouchableOpacity style={[styles.circleButton, styles.marginRight]}></TouchableOpacity>
@@ -109,7 +104,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff', // Cambiar el color de fondo según tus preferencias
+    backgroundColor: '#fff', 
     paddingHorizontal: 20,
     paddingTop: 40,
     paddingBottom: 20,
@@ -126,7 +121,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     backgroundColor: 'green',
-    paddingVertical: 3, // Reducir el padding vertical para hacer el botón más pequeño
+    paddingVertical: 3, 
     paddingHorizontal: 10,
     borderRadius: 5,
   },
@@ -156,14 +151,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   disabledButton: {
-    backgroundColor: '#ccc', // Cambiar el color del botón deshabilitado según tus preferencias
+    backgroundColor: '#ccc', 
   },
   footer: {
     borderTopWidth: 1,
-    borderColor: '#ccc', // Cambiar el color de borde según tus preferencias
+    borderColor: '#ccc', 
     paddingTop: 10,
     paddingBottom: 20,
-    backgroundColor: '#f0f0f0', // Cambiar el color de fondo del footer según tus preferencias
+    backgroundColor: '#f0f0f0',
     alignItems: 'center',
   },
   circleButtonContainer: {
@@ -175,7 +170,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 15,
-    backgroundColor: '#666', // Cambiar el color del botón circular según tus preferencias
+    backgroundColor: '#666', 
   },
   marginRight: {
     marginRight: 15,
