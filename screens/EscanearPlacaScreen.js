@@ -22,7 +22,7 @@ const ScannerScreen = () => {
   const handleScannedPlate = (plate) => {
     console.log('Scanned plate:', plate);
     setScannedPlate(plate);
-    setIsAnalyzing(false); // Stop analysis after successful scan
+    setIsAnalyzing(false);
   };
 
   const handleAnalyze = async () => {
@@ -30,9 +30,8 @@ const ScannerScreen = () => {
       setIsAnalyzing(true);
       try {
         const { data } = await camera.current.takePictureAsync();
-        // Process the image data using any OCR library to extract the license plate
-        // For simplicity, let's assume the license plate is extracted and stored in 'plate'
-        const plate = 'ABC123'; // Replace with the extracted plate
+        
+        const plate = 'ABC123';
         handleScannedPlate(plate);
       } catch (error) {
         console.error('Error analyzing camera frames:', error);
