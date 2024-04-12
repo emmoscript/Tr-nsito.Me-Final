@@ -125,7 +125,7 @@ const History = () => {
   };
 
   const handleGoBack = () => {
-    navigation.navigate('Profile'); // Navega a la pantalla "Profile"
+    navigation.navigate('Profile');
   };
 
   return (
