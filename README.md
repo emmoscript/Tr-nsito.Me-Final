@@ -1,3 +1,3 @@
 # Transito.Me-Final
 
-Proyecto para Proyecto Integrador I
+Proyecto Final para la asignatura de Proyecto Integrador I
