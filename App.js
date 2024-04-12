@@ -7,6 +7,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import EscanearPlacaScreen from './screens/EscanearPlacaScreen';
 import { AboutStack } from "./AppStack"; // Assuming AboutStack is a defined navigator elsewhere}
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ajustes from './screens/AjustesScreen';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -21,31 +23,32 @@ export default function App() {
         }}
       >
         
-        <Tab.Screen name="DashboardScreen" component={DashboardScreen} />
+        <Tab.Screen name="Dashboard" component={DashboardScreen} options={{
+            tabBarIcon: () => <Ionicons name={"home"} size={20} />,
+          }}/>
         <Tab.Screen
-          name="EscanearPlaca"
+          name="Escanear Placa"
           component={EscanearPlacaScreen}
           options={{
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="qrcode-scan" color={color} size={26} />
-            ),
+            tabBarIcon: () => <Ionicons name={"qr-code"} size={20} />,
           }}
         />
         <Tab.Screen
           name="Profile"
           component={ProfileScreen}
           options={{
-            tabBarLabel: "My Profile",
+            tabBarLabel: "Mi Perfil",
             tabBarIcon: () => <Ionicons name={"person"} size={20} />,
             tabBarBadge: 3, // Add a badge with number 3
           }}
         />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        
         <Tab.Screen
-          name="About Stack"
-          component={AboutStack}
+          name="Ajustes"
+          component={Ajustes}
           options={{
             headerShown: false, // Hide header for About Stack
+            tabBarIcon: () => <Ionicons name={"settings"} size={20} />
           }}
         />
       </Tab.Navigator>
